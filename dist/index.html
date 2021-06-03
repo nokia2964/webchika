@@ -12,22 +12,50 @@
     <meta property="og:description" content="" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="WEBCHIKA" />
-    <link rel="stylesheet" href="https://use.typekit.net/wqr3nol.css">
-
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/script.js" defer></script>
+    <script>
+        (function (d) {
+            var config = {
+                    kitId: 'fam7tkj',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || a && a != "complete" && a != "loaded") return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config)
+                } catch (e) {}
+            };
+            s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 
-    <body>
-        <div class="wapper p-top">
-            
+<body>
+    <div class="wapper p-top">
 
-                <main>
 
-                </main>
+        <main>
 
-            
-        </div>
-    </body>
+        </main>
+
+
+    </div>
+</body>
 
 </html>
